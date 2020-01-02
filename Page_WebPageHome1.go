@@ -30,6 +30,9 @@ func dataFunc(w http.ResponseWriter, r *http.Request) {
 func fbFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>FB link</h1>")
 }
+func tFunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>T link</h1>")
+}
 
 
 
@@ -42,5 +45,6 @@ func main() {
 	http.HandleFunc("/del", delFunc)
 	http.HandleFunc("/data", dataFunc)
 	http.HandleFunc("/fb", fbFunc)
+	http.HandleFunc("/t", tFunc)
 	http.ListenAndServe(":3000", nil)
 }
