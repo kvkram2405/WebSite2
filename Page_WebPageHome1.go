@@ -24,6 +24,10 @@ func saveFunc(w http.ResponseWriter, r *http.Request) {
 func delFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>File Has been Deleted </h1>")
 }
+func dataFunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>Get Data from Db </h1>")
+}
+
 
 func main() {
 	http.HandleFunc("/home", homeFunc)
@@ -32,5 +36,6 @@ func main() {
 	http.HandleFunc("/logout", logoutFunc)
 	http.HandleFunc("/save", saveFunc)
 	http.HandleFunc("/del", delFunc)
+	http.HandleFunc("/data", dataFunc)
 	http.ListenAndServe(":3000", nil)
 }
