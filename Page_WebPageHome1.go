@@ -18,19 +18,19 @@ func loginFunc(w http.ResponseWriter, r *http.Request) {
 func logoutFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>logout</h1>")
 }
-func saveFunc(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<h1>File Has been saved </h1>")
-}
-func delFunc(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<h1>File Has been Deleted </h1>")
-}
+//func saveFunc(w http.ResponseWriter, r *http.Request) {
+//	fmt.Fprint(w, "<h1>File Has been saved </h1>")
+//}
+//func delFunc(w http.ResponseWriter, r *http.Request) {
+//	fmt.Fprint(w, "<h1>File Has been Deleted </h1>")
+//}
 
 func main() {
 	http.HandleFunc("/home", homeFunc)
 	http.HandleFunc("/aboutus", aboutusFunc)
 	http.HandleFunc("/login", loginFunc)
 	http.HandleFunc("/logout", logoutFunc)
-	http.HandleFunc("/save", saveFunc)
-	http.HandleFunc("/save", delFunc)
+	//http.HandleFunc("/save", saveFunc)
+	//http.HandleFunc("/del", delFunc)
 	http.ListenAndServe(":3000", nil)
 }
